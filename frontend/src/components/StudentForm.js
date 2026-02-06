@@ -1,7 +1,7 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import axios from "axios";
 
-const StudentForm  = ({ fetchStudents }) => {
+const StudentForm  = ({ fetchStudents, editingStudent, setEditingStudent }) => {
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -46,6 +46,7 @@ const StudentForm  = ({ fetchStudents }) => {
       <input
         name="fullName"
         placeholder="Full Name"
+        required
         value={formData.fullName}
         onChange={handleChange}/>
 

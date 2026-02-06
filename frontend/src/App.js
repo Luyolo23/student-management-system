@@ -21,6 +21,7 @@ function App() {
       <h1>Student Management System</h1>
       <StudentForm fetchStudents={fetchStudents} editingStudent={editingStudent} setEditingStudent={setEditingStudent}/>
       <StudentList students={students} fetchStudents={fetchStudents} setEditingStudent={setEditingStudent}/>
+      <footer className="footer">Created by <strong>Luyolo Tuta</strong></footer>
     </div>
   );
 }
