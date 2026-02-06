@@ -30,3 +30,4 @@ npm start
 
 - Deciding how to make the form and student list look clean and readable took some experimenting with CSS.
 
+- Making the form work for both creating and editing students, while pre-filling the data and resetting correctly, was tricky at first.
