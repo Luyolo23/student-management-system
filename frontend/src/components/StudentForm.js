@@ -8,6 +8,16 @@ const StudentForm  = ({ fetchStudents }) => {
         course: "",
     });
 
+    useEffect(() => {
+    if (editingStudent) {
+      setFormData({
+        fullName: editingStudent.fullName,
+        email: editingStudent.email,
+        course: editingStudent.course,
+            });
+        }
+    }, [editingStudent]);
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -17,9 +27,18 @@ const StudentForm  = ({ fetchStudents }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:5000/students", formData);
-        setFormData({fullName: "", email: "", course: ""});
-        fetchStudents();
+        if (editingStudent) {
+      
+            await axios.put(
+            `http://localhost:5000/students/${editingStudent._id}`,
+            formData
+            );
+            setEditingStudent(null);
+            } else {
+                await axios.post("http://localhost:5000/students", formData);
+            }
+            setFormData({ fullName: "", email: "", course: "" });
+            fetchStudents();
     };
 
     return (
@@ -42,7 +61,15 @@ const StudentForm  = ({ fetchStudents }) => {
         value={formData.course}
         onChange={handleChange}/>
 
-      <button type="submit">Add Student</button>
+      <button type="submit">{editingStudent ? "Update Student" : "Add Student"}</button>
+      {editingStudent && (
+        <button
+          type="button"
+          onClick={() => {
+            setEditingStudent(null);
+            setFormData({ fullName: "", email: "", course: "" });
+            }}>Cancel</button>
+            )}
     </form>
   );
 };

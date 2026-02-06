@@ -13,6 +13,7 @@ const StudentList = ({ students, fetchStudents}) => {
                     <p>
                         {student.fullName} - {student.course}
                     </p>
+                    <button onClick={() => setEditingStudent(student)}>Edit</button>
                     <button onClick={() => deleteStudent(student._id)}> Delete </button>
                     </div>
             ))}
