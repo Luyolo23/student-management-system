@@ -5,6 +5,7 @@ import StudentList from "./components/StudentList";
 
 function App() {
   const [students, setStudents] = useState([]);
+  const [editingStudent, setEditingStudent] = useState(null);
 
   const fetchStudents = async () => {
     const response = await axios.get("http://localhost:5000/students");
@@ -18,8 +19,8 @@ function App() {
   return (
     <div>
       <h1>Student Management System</h1>
-      <StudentForm fetchStudents={fetchStudents} />
-      <StudentList students={students} fetchStudents={fetchStudents} />
+      <StudentForm fetchStudents={fetchStudents} editingStudent={editingStudent} setEditingStudent={setEditingStudent}/>
+      <StudentList students={students} fetchStudents={fetchStudents} setEditingStudent={setEditingStudent}/>
     </div>
   );
 }
