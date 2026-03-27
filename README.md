@@ -1,7 +1,7 @@
 # student-management-system
 
 ## Tech Stack
-- MongoDB
+- MySQL
 - Express.js
 - React.js
 - Node.js
