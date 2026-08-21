@@ -10,11 +10,9 @@ A Full-Stack Web Application for managing student records with CRUD operations.
 - **Build Tool**: Apache Maven
 
 ---
-=======
 - MySQL
-- Express.js
+- Spring boot
 - React.js
-- Node.js
 - Axios
 
 
@@ -71,7 +69,7 @@ Base URL: `http://localhost:8080/students`
 - **Method**: `POST`
 - **URL**: `http://localhost:8080/students`
 - **Headers**: `Content-Type: application/json`
-- **Body** (`raw` -> `JSON`):
+
   ```json
   {
     "fullName": "John Doe",
@@ -82,9 +80,9 @@ Base URL: `http://localhost:8080/students`
 
 ### 3. Update Existing Student (PUT)
 - **Method**: `PUT`
-- **URL**: `http://localhost:8080/students/1` *(Replace `1` with the student ID)*
+- **URL**: `http://localhost:8080/students/1` 
 - **Headers**: `Content-Type: application/json`
-- **Body** (`raw` -> `JSON`):
+
   ```json
   {
     "fullName": "John Smith",
@@ -95,7 +93,7 @@ Base URL: `http://localhost:8080/students`
 
 ### 4. Delete Student (DELETE)
 - **Method**: `DELETE`
-- **URL**: `http://localhost:8080/students/1` *(Replace `1` with the student ID)*
+- **URL**: `http://localhost:8080/students/1`
 - **Headers**: None required
 
 ---
