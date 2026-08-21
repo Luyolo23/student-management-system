@@ -3,12 +3,20 @@
 A Full-Stack Web Application for managing student records with CRUD operations.
 
 ## Tech Stack
+
 - **Frontend**: React.js, Axios, CSS3
 - **Backend**: Java Spring Boot (Spring Data JPA, REST Controller)
 - **Database**: MySQL (`studentdb`)
 - **Build Tool**: Apache Maven
 
 ---
+=======
+- MySQL
+- Express.js
+- React.js
+- Node.js
+- Axios
+
 
 ## Features
 - **Create**: Add new student records (Full Name, Email, Course)
@@ -50,6 +58,7 @@ The React frontend will start at `http://localhost:3000`.
 ---
 
 ## Testing Backend APIs with Postman
+
 
 Base URL: `http://localhost:8080/students`
 
